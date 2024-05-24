@@ -8,6 +8,14 @@ services:
       - jenkins_data:/var/jenkins_home
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+  devops-todo:
+    image: git@github.com:haythembekir20/todo-devops.git-${tag}
+    container_name: devops-examen
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5006:80"
     
 
 volumes:

@@ -75,6 +75,7 @@ class App extends Component {
               )}
             />
             <Route path="/about" component={About} />
+            <footer> Haythem BEKIR GL2 </footer>
           </div>
         </div>
       </Router>
