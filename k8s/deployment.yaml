@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app
+  name: todo-devops
   labels:
-    app: todo
+    app: todo-devops
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: todo
+      app: todo-devops
   template:
     metadata:
       labels:
-        app: todo
+        app: todo-devops
     spec:
       containers:
-      - name: todo-app
-        image: haythembekir20/todo-app:latest
+      - name: todo-devops
+        image: haythembekir20/todo-devops:latest
         ports:
         - containerPort: 8085
 

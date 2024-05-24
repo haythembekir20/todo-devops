@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'nodejs'
+        nodejs "node 22"
         dockerTool 'docker'
     }
     stages {
@@ -42,7 +42,6 @@ pipeline {
         stage("Deploy") {
             steps {
                 sh "kubectl apply -f k8s/"
-                sh "kubectl set image deployment/todo-devops todo-devops=haythembekir20/todo-devops:${env.BUILD_NUMBER}"
                 sh "kubectl rollout status deployment/todo-devops"
                 sh "kubectl get pods"
             }
